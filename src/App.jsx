@@ -1,18 +1,11 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Homepage from "./pages/homepage/Homepage";
-import Reviews from "./pages/reviews/Reviews";
+import ApplicationRoutes from "./routes/ApplicationRoutes";
 
-function App() {
+const App = () => {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route index element={<Homepage />} />
-          <Route path="reviews" element={<Reviews />} />
-        </Routes>
-      </BrowserRouter>
+      <ApplicationRoutes />
     </>
   );
-}
+};
 
 export default App;

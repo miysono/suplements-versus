@@ -8,6 +8,7 @@ export default {
     "./src/components/Button.jsx",
     "./src/layout/Footer.jsx",
     "./src/layout/Navbar.jsx",
+    "./src/components/PageBody.jsx",
   ],
   theme: {
     extend: {},

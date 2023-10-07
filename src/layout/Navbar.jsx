@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-export default function Navbar() {
+const Navbar = () => {
   return (
     <header className="text-green-700 bg-white top-0 text-md sticky overflow-x-hidden">
       <nav className="border-b-2 border-green-200 border-opacity-50">
@@ -72,4 +72,6 @@ export default function Navbar() {
       </nav>
     </header>
   );
-}
+};
+
+export default Navbar;

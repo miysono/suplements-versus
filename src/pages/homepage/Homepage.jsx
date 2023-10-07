@@ -1,15 +1,16 @@
 import Button from "../../components/Button";
 import Footer from "../../layout/Footer";
 import Navbar from "../../layout/Navbar";
+import PageBody from "../../layout/PageBody";
 
-export default function Homepage() {
+const Homepage = () => {
   return (
     <>
       {/* NAVBAR */}
       <Navbar />
 
       {/* MAIN */}
-      <main className="min-h-screen text-green-600 flex flex-col items-center justify-start overflow-x-hidden">
+      <PageBody>
         {/* INTRO SECTION */}
         <section className="container mt-10 lg:mt-20 ">
           <div className="mx-8 my-auto lg:flex lg:justify-between lg:items-center lg:mx-28">
@@ -412,10 +413,12 @@ export default function Homepage() {
             </div>
           </div>
         </section>
-      </main>
+      </PageBody>
 
       {/* FOOTER */}
       <Footer />
     </>
   );
-}
+};
+
+export default Homepage;

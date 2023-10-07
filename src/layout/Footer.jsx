@@ -1,6 +1,6 @@
 import Button from "../components/Button";
 
-export default function Footer() {
+const Footer = () => {
   return (
     <footer className="pt-20 border-t-4 border-green-100 text-green-600 flex flex-col items-center justify-start overflow-x-hidden">
       <div className="container">
@@ -141,4 +141,6 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;
