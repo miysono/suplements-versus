@@ -1,6 +1,8 @@
 import Footer from "../../layout/Footer";
 import Navbar from "../../layout/Navbar";
 import PageBody from "../../layout/PageBody";
+import { allReviews } from "../../assets/data";
+import { Link } from "react-router-dom";
 
 const Reviews = () => {
   return (
@@ -11,22 +13,21 @@ const Reviews = () => {
           <div className="flex mx-28">
             <div className="w-1/2">
               <h1 className="text-4xl font-semibold">Latest reviews</h1>
-              <div className="flex flex-col gap-10 my-10">
-                {Array.from({ length: 8 }, (_, i) => (
-                  <div key={i} className="flex gap-5">
-                    <img
-                      className="rounded lg:h-60"
-                      src="https://re-mm-assets.s3.amazonaws.com/product_photo/46610/large_large_PolyTeal-2-3-JOMAR_322UP_1471509939.jpg"
-                    />
-                    <div className="flex flex-col gap-2.5 text-xl">
-                      <h2 className="text-2xl font-semibold mb-2.5">
-                        Article title
-                      </h2>
-                      <p>October 10, 2023</p>
-                      <p>Category</p>
-                      <p>Time to read</p>
+              <div className="flex flex-col-reverse gap-10 my-10">
+                {allReviews.map((el, _) => (
+                  <Link key={el.id} to={el.id}>
+                    <div className="flex gap-5 hover:underline">
+                      <img className="rounded lg:h-60" src={el.imgSrc} />
+                      <div className="flex flex-col gap-2.5 text-xl">
+                        <h2 className="text-2xl font-semibold mb-2.5">
+                          {el.title}
+                        </h2>
+                        <p>{el.dateCreated}</p>
+                        <p>{el.category}</p>
+                        <p>{el.timeToRead}</p>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>
