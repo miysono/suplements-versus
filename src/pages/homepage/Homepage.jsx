@@ -14,11 +14,6 @@ import SectionTitle from "./components/SectionTitle";
 import { allReviews } from "../../assets/data";
 import { Link } from "react-router-dom";
 
-const tealImgPlaceholder =
-  "https://re-mm-assets.s3.amazonaws.com/product_photo/46610/large_large_PolyTeal-2-3-JOMAR_322UP_1471509939.jpg";
-const greenImgPlaceholder =
-  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAP1BMVEUEggQAfQCgw6Cqz6oAewCjyKO01bS9273e7d4AeQAAdQCbwJv+//7y9/Ll8eXY6tjR5tHJ4smu0q4AcQDQ4dBHeLN8AAABbElEQVR4nO3dSUoDARRF0UpX6ewS3f9azUAEcWAIhHiq7lnBu/MPf3h6fnl9O522F+PF6svmp+XtNn9aXeM8XmP7y24Y3/f7/frb4r9a3+ZwHMb1MGWL5QwKz5MvXC0ePeKuKvRV6KvQV6GvQl+FvkvhpkJbhb4KfRX6KvRV6KvQV6GvQl+Fvgp9Ffoq9FXoq9BXoW8WhcsKbRX6KvRV6KvQV6GvQl+Fvgp9Ffoq9FXoq9BXoa9CX4W+Cn0V+ir0VeibxcVQhbgKfRX6KvRV6KvQV6GvQl+Fvgp9Ffoq9FXoq9BXoa9CX4W+Cn0V+ir0zeILS4W4Cn0V+ir0Veir0Fehr0Jfhb4KfRX6KvRV6KvQV6GvQl+FvlkUnidfOK4fPeKuKvRV6KvQV6GvQl+Fvgp9Ffoq9FXoq9BXoa9CX4W+Cn0V+ir0Vei7FG4rtFXoq9BXoa9CX4W+Cn0V+uZReFhM2f447I7LKTt+fAID6BDSZpXAFwAAAABJRU5ErkJggg==";
-
 const Homepage = () => {
   return (
     <>
@@ -33,7 +28,7 @@ const Homepage = () => {
         <SectionBody marginXl>
           <InfoSection
             colorSecondary
-            imgSrcOne={tealImgPlaceholder}
+            imgSrcOne="https://media.istockphoto.com/id/491395412/photo/herbal-medicine-pills-and-mortar-over-bright-background.jpg?s=612x612&w=0&k=20&c=t_uNhNJ0r4LcsOtjhRJG2I8-8MCdrcrwgnyD6Z7mc_Q="
             btnContentOne="Call to action"
             titleContent="Compare supplements using our comparison app!"
             paragraphContent="Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
@@ -49,6 +44,9 @@ const Homepage = () => {
             colorSecondary
             reversed
             multipleImgs
+            imgSrcOne="https://media.istockphoto.com/id/1414489487/photo/supplements-and-vitamins-on-a-white-background-selective-focus.jpg?s=612x612&w=0&k=20&c=FgfT2r6_yRH8Rlx5R5MGu-rX3fgAMefkl2QSkd_JkSk="
+            imgSrcTwo="https://plus.unsplash.com/premium_photo-1666275003927-47bea5a1fb0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aGVhbHRoeSUyMGZvb2R8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
+            imgSrcThree="https://media.istockphoto.com/id/914503810/photo/alternative-herb-medicine-herbal-vitamin-on-white-background.jpg?s=612x612&w=0&k=20&c=pLrkxMPuJp7dsYqu6K4C1PDFK04TGSBkjzdW3zq-ENc="
             btnContentOne="Call to action"
             titleContent="Check our latest articles!"
             paragraphContent="Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -82,7 +80,7 @@ const Homepage = () => {
           <InfoSection
             reversed
             multipleBtns
-            imgSrcOne={greenImgPlaceholder}
+            imgSrcOne="https://www.sunriseintegration.com/uploads/attachments/ckzbu19b27ealvxp7jpclt9t9-supplements-hero.full.jpg"
             btnContentOne="Call to action"
             btnContentTwo="Call to action"
             titleContent="Why Supplements Versus?"
@@ -101,13 +99,13 @@ const Homepage = () => {
           <div className="mt-10 mx-8 flex gap-10 flex-wrap items-center justify-center lg:mx-28">
             {Array.from({ length: 3 }, (_, i) => (
               <Link key={i} to={`/reviews/${allReviews[i].id}`}>
-                <div className="relative w-full flex justify-center items-center lg:w-96  hover:scale-105 duration-200 shadow-teal-900 drop-shadow-xl">
+                <div className="relative z-0 w-full flex justify-center items-center lg:w-96  hover:scale-105 duration-200 shadow-teal-900 drop-shadow-xl">
                   <img
                     className="rounded lg:h-96 w-full object-cover"
                     src={allReviews[i].imgSrc}
                   />
-                  <div className="h-full w-full absolute left-0 hover:opacity-0 duration-300 text-gray-900">
-                    <div className="absolute flex flex-col justify-between shadow-teal-900 left-0 w-40 py-5 h-full px-4 text-lg font-semibold bg-teal-100 border-r-4 border-r-white">
+                  <div className="h-full w-full absolute left-0 hover:opacity-0 duration-300 text-gray-200">
+                    <div className="absolute flex flex-col justify-between shadow-teal-900 left-0 w-40 py-5 h-full px-4 text-lg font-semibold bg-teal-700 border-r-4 border-r-white">
                       <p>{allReviews[i].title}</p>
 
                       <p className="text-base font-normal">
@@ -142,7 +140,7 @@ const Homepage = () => {
         <SectionBody marginXl>
           <InfoSection
             colorSecondary
-            imgSrcOne={tealImgPlaceholder}
+            imgSrcOne="https://media.istockphoto.com/id/464469702/photo/pills-and-multivitamins.jpg?s=612x612&w=0&k=20&c=Kf2UcboSMLrhE0P8GqrGbi0eHbaZ1EaGKp0GWqgpmKQ="
             btnContentOne="Call to action"
             titleContent="Still have questions?"
             paragraphContent="Lorem ipsum dolor sit amet consectetur adipisicing elit.

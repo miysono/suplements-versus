@@ -14,6 +14,7 @@ const InfoSection = ({
   titleContent,
   paragraphContent,
 }) => {
+  const multipleImgsSrc = [imgSrcOne, imgSrcTwo, imgSrcThree];
   return (
     <div
       className={`mx-8 ${
@@ -24,7 +25,7 @@ const InfoSection = ({
     >
       {!multipleImgs && (
         <img
-          className={`w-full ${
+          className={`w-full object-cover ${
             reversed ? "lg:w-1/3" : "lg:w-2/5"
           } lg:h-72 rounded`}
           src={imgSrcOne}
@@ -33,10 +34,10 @@ const InfoSection = ({
       {multipleImgs && (
         <div className="flex flex-col gap-5 mt-5 lg:mt-0 lg:flex-row lg:w-2/3">
           {Array.from({ length: 3 }, (_, i) => (
-            <div key={i} className="rounded">
+            <div key={i} className="rounded w-1/3">
               <img
-                className="rounded h-96"
-                src="https://re-mm-assets.s3.amazonaws.com/product_photo/46610/large_large_PolyTeal-2-3-JOMAR_322UP_1471509939.jpg"
+                className="rounded w-full h-96 object-cover"
+                src={multipleImgsSrc[i]}
               />
             </div>
           ))}

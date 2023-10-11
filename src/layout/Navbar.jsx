@@ -2,7 +2,7 @@ import NavItem from "./components/NavItem";
 
 const Navbar = () => {
   return (
-    <header className="text-green-700 bg-white top-0 text-md sticky overflow-x-hidden">
+    <header className="text-green-700 bg-white top-0 text-md sticky overflow-x-hidden  z-50">
       <nav className="border-b-2 border-green-200 border-opacity-50">
         {/* COMPUTER LIST */}
         <ul className="hidden px-8 lg:flex items-center justify-between font-semibold text-lg">
