@@ -17,7 +17,10 @@ const Reviews = () => {
                 {allReviews.map((el, _) => (
                   <Link key={el.id} to={el.id}>
                     <div className="flex gap-5 hover:underline">
-                      <img className="rounded lg:h-60" src={el.imgSrc} />
+                      <img
+                        className="rounded lg:h-60 w-60 object-cover"
+                        src={el.imgSrc}
+                      />
                       <div className="flex flex-col gap-2.5 text-xl">
                         <h2 className="text-2xl font-semibold mb-2.5">
                           {el.title}
@@ -35,7 +38,10 @@ const Reviews = () => {
               <h1 className="text-4xl font-semibold">Most popular reviews</h1>
               <div className="flex flex-col gap-10 my-10">
                 {Array.from({ length: 6 }, (_, i) => (
-                  <div key={_} className="text-xl flex flex-col gap-2.5">
+                  <div
+                    key={_}
+                    className="text-xl flex flex-col gap-2.5 hover:underline"
+                  >
                     <h2 className="text-2xl font-semibold">Review title</h2>
                     <p className="mt-2.5">
                       Review description: lorem lorem lorem lorem lorem

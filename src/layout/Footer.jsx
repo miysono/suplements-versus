@@ -1,3 +1,5 @@
+import AccordionBody from "../components/AccordionBody";
+import AccordionItem from "../components/AccordionItem";
 import Button from "../components/Button";
 
 const Footer = () => {
@@ -44,85 +46,28 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="max-w-3xl my-10 lg:hidden">
-            <div className="py-3 border-y-2 border-green-700 border-opacity-20 ">
-              <details>
-                <summary className="flex justify-between items-center font-semibold cursor-pointer list-none">
-                  <span className="text-xl">Wiki</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg
-                      fill="none"
-                      height="24"
-                      shapeRendering="geometricPrecision"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1.5"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path d="M6 9l6 6 6-6"></path>
-                    </svg>
-                  </span>
-                </summary>
-                <div className="text-lg">
-                  <p className="mt-5">Answer</p>
-                </div>
-              </details>
-            </div>
-            <div className="py-3 border-b-2 border-green-700 border-opacity-20">
-              <details>
-                <summary className="flex justify-between items-center font-semibold cursor-pointer list-none">
-                  <span className="text-xl">About us</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg
-                      fill="none"
-                      height="24"
-                      shapeRendering="geometricPrecision"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1.5"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path d="M6 9l6 6 6-6"></path>
-                    </svg>
-                  </span>
-                </summary>
-                <div className="text-lg">
-                  <p className="mt-5">Answer</p>
-                </div>
-              </details>
-            </div>
-            <div className="py-3 border-b-2 border-green-700 border-opacity-20">
-              <details>
-                <summary className="flex justify-between items-center font-semibold cursor-pointer list-none">
-                  <span className="text-xl">More</span>
-                  <span className="transition group-open:rotate-180">
-                    <svg
-                      fill="none"
-                      height="24"
-                      shapeRendering="geometricPrecision"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1.5"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path d="M6 9l6 6 6-6"></path>
-                    </svg>
-                  </span>
-                </summary>
-                <div className="text-lg">
-                  <p className="mt-5">Answer</p>
-                </div>
-              </details>
-            </div>
+          <div className="text-xl w-full lg:hidden">
+            <AccordionBody>
+              <AccordionItem
+                first
+                borderPrimary
+                initialText="Wiki"
+                secondText="Answer"
+              />
+              <AccordionItem
+                borderPrimary
+                initialText="About us"
+                secondText="Answer"
+              />
+              <AccordionItem
+                borderPrimary
+                initialText="More"
+                secondText="Answer"
+              />
+            </AccordionBody>
           </div>
 
-          <div className="flex flex-col">
+          <div className=" mt-10 flex flex-col">
             <h2 className="text-2xl font-semibold">Subscribe to newsletter!</h2>
             <p className="text-lg">Lorem ipsum dolor sit</p>
             <input

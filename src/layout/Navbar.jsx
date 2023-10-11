@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import NavItem from "./components/NavItem";
 
 const Navbar = () => {
   return (
@@ -6,43 +6,24 @@ const Navbar = () => {
       <nav className="border-b-2 border-green-200 border-opacity-50">
         {/* COMPUTER LIST */}
         <ul className="hidden px-8 lg:flex items-center justify-between font-semibold text-lg">
-          <NavLink to="/">
-            <li className="text-green-600 tracking-tighter text-xl">
-              Suplement Versus
-            </li>
-          </NavLink>
+          <li className="text-xl">
+            <NavItem linkTo="/" textContent="Supplements Versus" />
+          </li>
 
           <li>
             <div className="flex gap-5">
-              <NavLink
-                to="/reviews"
-                className={({ isActive }) =>
-                  isActive
-                    ? "py-3 border-b-2 border-y-green-700"
-                    : "py-3 border-b-2 border-transparent hover:border-b-2 hover:border-y-green-700"
-                }
-              >
-                Reviews
-              </NavLink>
-              <p className="py-3 border-b-2 border-transparent hover:border-b-2 hover:border-y-green-700">
-                Top 10
-              </p>
-              <p className="py-3 border-b-2 border-transparent hover:border-b-2 hover:border-y-green-700">
-                RDA List
-              </p>
-              <p className="py-3 border-b-2 border-transparent hover:border-b-2 hover:border-y-green-700">
-                Wiki
-              </p>
-              <p className="py-3 border-b-2 border-transparent hover:border-b-2 hover:border-y-green-700">
-                About Us
-              </p>
+              <NavItem linkTo="/reviews" textContent="Reviews" />
+              <NavItem linkTo="/top-10" textContent="Top 10" />
+              <NavItem linkTo="/rda-list" textContent="RDA List" />
+              <NavItem linkTo="/wiki" textContent="Wiki" />
+              <NavItem linkTo="/about-us" textContent="About us" />
             </div>
           </li>
 
           <li>
             <div className="flex gap-5">
-              <p>Contact Us</p>
-              <p>Sign in</p>
+              <NavItem linkTo="/contact-us" textContent="Contact us" />
+              <NavItem linkTo="/login" textContent="Sign in" />
             </div>
           </li>
         </ul>
