@@ -17,12 +17,21 @@ export default {
     "./src/pages/contact/ContactUs.jsx",
     "./src/pages/aboutus/AboutUs.jsx",
 
+    "./src/pages/homepage/components/HomepageIntro.jsx",
+    "./src/pages/homepage/components/ProductItem.jsx",
+    "./src/pages/homepage/components/ProductList.jsx",
+    "./src/pages/homepage/components/SectionTitle.jsx",
+    "./src/pages/homepage/components/InfoSection.jsx",
+
     "./src/layout/Footer.jsx",
     "./src/layout/Navbar.jsx",
     "./src/layout/PageBody.jsx",
     "./src/layout/components/NavItem.jsx",
 
     "./src/components/Button.jsx",
+    "./src/components/AccordionBody.jsx",
+    "./src/components/AccordionItem.jsx",
+    "./src/components/SectionBody.jsx",
   ],
   theme: {
     extend: {},

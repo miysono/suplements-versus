@@ -6,9 +6,18 @@ import Footer from "../../layout/Footer";
 import Navbar from "../../layout/Navbar";
 import PageBody from "../../layout/PageBody";
 import HomepageIntro from "./components/HomepageIntro";
+import InfoSection from "./components/InfoSection";
 import ProductItem from "./components/ProductItem";
 import ProductList from "./components/ProductList";
 import SectionTitle from "./components/SectionTitle";
+
+import { allReviews } from "../../assets/data";
+import { Link } from "react-router-dom";
+
+const tealImgPlaceholder =
+  "https://re-mm-assets.s3.amazonaws.com/product_photo/46610/large_large_PolyTeal-2-3-JOMAR_322UP_1471509939.jpg";
+const greenImgPlaceholder =
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAP1BMVEUEggQAfQCgw6Cqz6oAewCjyKO01bS9273e7d4AeQAAdQCbwJv+//7y9/Ll8eXY6tjR5tHJ4smu0q4AcQDQ4dBHeLN8AAABbElEQVR4nO3dSUoDARRF0UpX6ewS3f9azUAEcWAIhHiq7lnBu/MPf3h6fnl9O522F+PF6svmp+XtNn9aXeM8XmP7y24Y3/f7/frb4r9a3+ZwHMb1MGWL5QwKz5MvXC0ePeKuKvRV6KvQV6GvQl+FvkvhpkJbhb4KfRX6KvRV6KvQV6GvQl+Fvgp9Ffoq9FXoq9BXoW8WhcsKbRX6KvRV6KvQV6GvQl+Fvgp9Ffoq9FXoq9BXoa9CX4W+Cn0V+ir0VeibxcVQhbgKfRX6KvRV6KvQV6GvQl+Fvgp9Ffoq9FXoq9BXoa9CX4W+Cn0V+ir0zeILS4W4Cn0V+ir0Veir0Fehr0Jfhb4KfRX6KvRV6KvQV6GvQl+FvlkUnidfOK4fPeKuKvRV6KvQV6GvQl+Fvgp9Ffoq9FXoq9BXoa9CX4W+Cn0V+ir0Vei7FG4rtFXoq9BXoa9CX4W+Cn0V+uZReFhM2f447I7LKTt+fAID6BDSZpXAFwAAAABJRU5ErkJggg==";
 
 const Homepage = () => {
   return (
@@ -22,61 +31,29 @@ const Homepage = () => {
 
         {/* TRY COMPARISON */}
         <SectionBody marginXl>
-          <div className="mx-8 lg:mx-28 lg:flex lg:justify-between lg:items-center">
-            <img
-              className="w-full rounded lg:w-2/5 lg:h-72 "
-              src="https://re-mm-assets.s3.amazonaws.com/product_photo/46610/large_large_PolyTeal-2-3-JOMAR_322UP_1471509939.jpg"
-            />
-            <div className="text-lg mt-5 lg:mt-0 lg:w-1/2">
-              <SectionTitle colorSecondary>
-                Compare supplements using our comparison app!
-              </SectionTitle>
-              <p className="text-xl mt-2.5 lg:mt-5 text-teal-700">
-                Placeholder description, placeholder description, placeholder
-                decription,
-              </p>
-              <Button color="secondary" aditionalStyling="w-full lg:w-96">
-                Call to action
-              </Button>
-            </div>
-          </div>
+          <InfoSection
+            colorSecondary
+            imgSrcOne={tealImgPlaceholder}
+            btnContentOne="Call to action"
+            titleContent="Compare supplements using our comparison app!"
+            paragraphContent="Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+            corrupti corporis facilis necessitatibus exercitationem, nisi
+            enim iste deserunt aliquam? Rerum nam harum neque laboriosam
+            corrupti accusantium voluptas provident impedit debitis?"
+          />
         </SectionBody>
 
         {/* LATEST ARTICLES */}
         <SectionBody marginXl>
-          <div className="mx-8 lg:flex lg:items-center lg:justify-between lg:mx-28">
-            <div className="lg:w-1/4">
-              <SectionTitle colorSecondary>
-                Check our latest articles!
-              </SectionTitle>
-              <p className="text-xl mt-2.5 lg:mt-5 text-teal-700">
-                Placeholder description, placeholder description, placeholder
-                decription,
-              </p>
-              <Button
-                color="secondary"
-                aditionalStyling="hidden lg:block lg:w-96"
-              >
-                Call to action
-              </Button>
-            </div>
-            <div className="flex flex-col gap-5 mt-5 lg:mt-0 lg:flex-row lg:w-2/3">
-              {Array.from({ length: 3 }, (_, i) => (
-                <div key={i} className="rounded">
-                  <img
-                    className="rounded h-96"
-                    src="https://re-mm-assets.s3.amazonaws.com/product_photo/46610/large_large_PolyTeal-2-3-JOMAR_322UP_1471509939.jpg"
-                  />
-                </div>
-              ))}
-            </div>
-            <Button
-              color="secondary"
-              aditionalStyling="w-full lg:hidden lg:w-96"
-            >
-              Call to action
-            </Button>
-          </div>
+          <InfoSection
+            colorSecondary
+            reversed
+            multipleImgs
+            btnContentOne="Call to action"
+            titleContent="Check our latest articles!"
+            paragraphContent="Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Praesentium quis, dolor facere dolorem cumque vel."
+          />
         </SectionBody>
 
         {/* TOP PRODUCTS */}
@@ -101,39 +78,19 @@ const Homepage = () => {
         </SectionBody>
 
         {/* WHY US SECTION */}
-
         <SectionBody marginXl>
-          <div className="mx-8 lg:flex lg:justify-between lg:items-center lg:mx-28">
-            <img
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAP1BMVEUEggQAfQCgw6Cqz6oAewCjyKO01bS9273e7d4AeQAAdQCbwJv+//7y9/Ll8eXY6tjR5tHJ4smu0q4AcQDQ4dBHeLN8AAABbElEQVR4nO3dSUoDARRF0UpX6ewS3f9azUAEcWAIhHiq7lnBu/MPf3h6fnl9O522F+PF6svmp+XtNn9aXeM8XmP7y24Y3/f7/frb4r9a3+ZwHMb1MGWL5QwKz5MvXC0ePeKuKvRV6KvQV6GvQl+FvkvhpkJbhb4KfRX6KvRV6KvQV6GvQl+Fvgp9Ffoq9FXoq9BXoW8WhcsKbRX6KvRV6KvQV6GvQl+Fvgp9Ffoq9FXoq9BXoa9CX4W+Cn0V+ir0VeibxcVQhbgKfRX6KvRV6KvQV6GvQl+Fvgp9Ffoq9FXoq9BXoa9CX4W+Cn0V+ir0zeILS4W4Cn0V+ir0Veir0Fehr0Jfhb4KfRX6KvRV6KvQV6GvQl+FvlkUnidfOK4fPeKuKvRV6KvQV6GvQl+Fvgp9Ffoq9FXoq9BXoa9CX4W+Cn0V+ir0Vei7FG4rtFXoq9BXoa9CX4W+Cn0V+uZReFhM2f447I7LKTt+fAID6BDSZpXAFwAAAABJRU5ErkJggg=="
-              className="w-full rounded lg:hidden lg:w-1/3 lg:h-72"
-            />
-            <div className="mt-5 lg:mt-0 lg:w-1/2 lg:text-xl">
-              <SectionTitle>Why Supplements Versus?</SectionTitle>
-              <p className="mt-2.5 text-xl lg:mt-5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reprehenderit, nisi minus. Quibusdam quasi, quo rerum expedita
-                eum, neque quis sunt ducimus enim fugiat accusantium corrupti
-                molestias temporibus sequi praesentium doloremque?
-              </p>
-              <div className="flex flex-col lg:gap-5 lg:flex-row">
-                <Button color="primary" aditionalStyling="w-full lg:w-72">
-                  Call to action
-                </Button>
-                <Button
-                  color="secondary"
-                  outlined={true}
-                  aditionalStyling="w-full lg:w-48"
-                >
-                  Call to action
-                </Button>
-              </div>
-            </div>
-            <img
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAP1BMVEUEggQAfQCgw6Cqz6oAewCjyKO01bS9273e7d4AeQAAdQCbwJv+//7y9/Ll8eXY6tjR5tHJ4smu0q4AcQDQ4dBHeLN8AAABbElEQVR4nO3dSUoDARRF0UpX6ewS3f9azUAEcWAIhHiq7lnBu/MPf3h6fnl9O522F+PF6svmp+XtNn9aXeM8XmP7y24Y3/f7/frb4r9a3+ZwHMb1MGWL5QwKz5MvXC0ePeKuKvRV6KvQV6GvQl+FvkvhpkJbhb4KfRX6KvRV6KvQV6GvQl+Fvgp9Ffoq9FXoq9BXoW8WhcsKbRX6KvRV6KvQV6GvQl+Fvgp9Ffoq9FXoq9BXoa9CX4W+Cn0V+ir0VeibxcVQhbgKfRX6KvRV6KvQV6GvQl+Fvgp9Ffoq9FXoq9BXoa9CX4W+Cn0V+ir0zeILS4W4Cn0V+ir0Veir0Fehr0Jfhb4KfRX6KvRV6KvQV6GvQl+FvlkUnidfOK4fPeKuKvRV6KvQV6GvQl+Fvgp9Ffoq9FXoq9BXoa9CX4W+Cn0V+ir0Vei7FG4rtFXoq9BXoa9CX4W+Cn0V+uZReFhM2f447I7LKTt+fAID6BDSZpXAFwAAAABJRU5ErkJggg=="
-              className="hidden lg:block w-1/3 rounded h-72"
-            />
-          </div>
+          <InfoSection
+            reversed
+            multipleBtns
+            imgSrcOne={greenImgPlaceholder}
+            btnContentOne="Call to action"
+            btnContentTwo="Call to action"
+            titleContent="Why Supplements Versus?"
+            paragraphContent="Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Reprehenderit, nisi minus. Quibusdam quasi, quo rerum expedita
+            eum, neque quis sunt ducimus enim fugiat accusantium corrupti
+            molestias temporibus sequi praesentium doloremque?"
+          />
         </SectionBody>
 
         {/* CHECK OUT OUR REVIEWS */}
@@ -141,54 +98,58 @@ const Homepage = () => {
           <SectionTitle center colorSecondary>
             Check out our reviews!
           </SectionTitle>
-          <div className="mt-10 mx-8 flex gap-5 flex-wrap items-center justify-center lg:mx-28">
+          <div className="mt-10 mx-8 flex gap-10 flex-wrap items-center justify-center lg:mx-28">
             {Array.from({ length: 3 }, (_, i) => (
-              <div
-                key={i}
-                className="w-full flex justify-center items-center lg:w-96 "
-              >
-                <img
-                  className="rounded lg:h-96 w-full"
-                  src="https://preview.redd.it/ih6no69aj90y.png?auto=webp&s=8e4f9101f58e0812f3625a51ec65c9b7c050da75"
-                />
-              </div>
+              <Link key={i} to={`/reviews/${allReviews[i].id}`}>
+                <div className="relative w-full flex justify-center items-center lg:w-96  hover:scale-105 duration-200 shadow-teal-900 drop-shadow-xl">
+                  <img
+                    className="rounded lg:h-96 w-full object-cover"
+                    src={allReviews[i].imgSrc}
+                  />
+                  <div className="h-full w-full absolute left-0 hover:opacity-0 duration-300 text-gray-900">
+                    <div className="absolute flex flex-col justify-between shadow-teal-900 left-0 w-40 py-5 h-full px-4 text-lg font-semibold bg-teal-100 border-r-4 border-r-white">
+                      <p>{allReviews[i].title}</p>
+
+                      <p className="text-base font-normal">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit.
+                      </p>
+
+                      <div className="text-base">
+                        <p>{allReviews[i].category}</p>
+                        <p>{allReviews[i].dateCreated}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
           <div className="mx-8 mt-10 lg:text-xl flex justify-center lg:mx-28">
-            <Button
-              color="secondary"
-              outlined={true}
-              aditionalStyling="w-full lg:w-96"
-            >
-              Call to action
-            </Button>
-          </div>
-        </SectionBody>
-
-        {/* STILL HAVE QUESTIONS? */}
-        <SectionBody marginXl>
-          <div className="mx-8 lg:flex lg:justify-between lg:items-center lg:mx-28">
-            <img
-              className="w-full lg:w-2/5 lg:h-72 rounded"
-              src="https://re-mm-assets.s3.amazonaws.com/product_photo/46610/large_large_PolyTeal-2-3-JOMAR_322UP_1471509939.jpg"
-            />
-            <div className="mt-5 lg:w-1/2 lg:text-xl lg:mt-0 text-teal-700">
-              <SectionTitle colorSecondary>Still have questions?</SectionTitle>
-              <p className="mt-2.5 text-xl lg:mt-5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reprehenderit, nisi minus. Quibusdam quasi, quo rerum expedita
-                eum, neque quis sunt ducimus enim fugiat accusantium corrupti
-                molestias temporibus sequi praesentium doloremque?
-              </p>
+            <Link to="/reviews">
               <Button
                 color="secondary"
                 outlined={true}
                 aditionalStyling="w-full lg:w-96"
               >
-                Call to action
+                Go to reviews!
               </Button>
-            </div>
+            </Link>
           </div>
+        </SectionBody>
+
+        {/* STILL HAVE QUESTIONS? */}
+        <SectionBody marginXl>
+          <InfoSection
+            colorSecondary
+            imgSrcOne={tealImgPlaceholder}
+            btnContentOne="Call to action"
+            titleContent="Still have questions?"
+            paragraphContent="Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Reprehenderit, nisi minus. Quibusdam quasi, quo rerum expedita
+            eum, neque quis sunt ducimus enim fugiat accusantium corrupti
+            molestias temporibus sequi praesentium doloremque?"
+          />
         </SectionBody>
 
         {/* FAQ */}

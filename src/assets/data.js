@@ -1,21 +1,30 @@
 const allReviews = [
   {
-    id: "placeholder-id2",
-    title: "Article Title2",
-    dateCreated: "October 6, 2023",
-    category: "Supplements",
-    timeToRead: "5 minutes",
-    imgSrc:
-      "https://re-mm-assets.s3.amazonaws.com/product_photo/46610/large_large_PolyTeal-2-3-JOMAR_322UP_1471509939.jpg",
-  },
-  {
     id: "best-b-vitamin",
-    title: "Best Vitamin Supplement",
+    title: "Centrum MultiGummies Review",
     dateCreated: "October 11, 2023",
     category: "Vitamins",
     timeToRead: "2 minutes",
     imgSrc:
-      "https://cdn.consumerlab.com/images/review/362_image_hires_B%20Vitamin%20Supplements%201400%20x%20787.jpg?size=large",
+      "https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/bp-wellness-centrum/en-GB/sliced-images/global/products/new/15000309008693-MAIN.webp",
+  },
+  {
+    id: "best-b-vitamin",
+    title: "Natures Plus B2 Review",
+    dateCreated: "October 11, 2023",
+    category: "Vitamins",
+    timeToRead: "2 minutes",
+    imgSrc:
+      "https://naturesplus.com/cdn/shop/products/1635-01_62d3d5c9-e305-42e1-b746-212f078424c3_1000x.jpg?v=1695061785",
+  },
+  {
+    id: "best-b-vitamin",
+    title: "Nutricost B12 Review",
+    dateCreated: "October 11, 2023",
+    category: "Vitamins",
+    timeToRead: "2 minutes",
+    imgSrc:
+      "https://www.miamiherald.com/reviews/wp-content/uploads/2023/03/nutricost-miamiherald2-1-768x507.jpg",
   },
 ];
 

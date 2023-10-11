@@ -39,9 +39,9 @@ const SectionBody = ({
         paddingMd && "py-20"
       } ${paddingLg && "py-30"} ${paddingXl && "py-40"} ${
         textPrimary && "text-green-600"
-      } ${textSecondary && "text-teal-700"} ${bgPrimary && "bg-green-100"} ${
-        bgSecondary && "bg-teal-100"
-      } container`}
+      } ${textSecondary && "text-teal-700"} ${
+        bgPrimary && "bg-green-100 bg-opacity-50"
+      } ${bgSecondary && "bg-teal-100 bg-opacity-50"} container`}
     >
       {children}
     </section>
