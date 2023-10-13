@@ -9,6 +9,8 @@ import Wiki from "../pages/wiki/Wiki";
 import AboutUs from "../pages/aboutus/AboutUs";
 import ContactUs from "../pages/contact/ContactUs";
 import Login from "../pages/login/Login";
+import AdminDashboard from "../pages/admin-dashboard/AdminDashboard";
+import NewReview from "../pages/admin-dashboard/components/NewReview";
 const ApplicationRoutes = () => {
   return (
     <BrowserRouter>
@@ -24,6 +26,20 @@ const ApplicationRoutes = () => {
         <Route path="login" element={<Login />} />
         {/* <Route path="register" element={<Register />} /> */}
         <Route path="*" element={<PageNotFound />} />
+        <Route path="adm-dashboard" element={<AdminDashboard />}>
+          <Route path="new-review" element={<NewReview />} />
+          {/* <Route path="edit-review" element={<Editeview />} />
+          <Route path="delete-review" element={<DeleteReview />} />
+          <Route path="new-article" element={<NewArticle />} />
+          <Route path="edit-article" element={<EditArticle />} />
+          <Route path="delete-article" element={<DeleteArticle />} />
+          <Route path="new-comparator-item" element={<NewComparatorItem />} />
+          <Route path="edit-comparator-item" element={<EditComparatorItem />} />
+          <Route
+            path="delete-comparator-item"
+            element={<DeleteComparatorItem />}
+          /> */}
+        </Route>
       </Routes>
     </BrowserRouter>
   );

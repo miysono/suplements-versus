@@ -1,21 +1,14 @@
-const ProductItem = ({
-  lengthOne,
-  lengthTwo,
-  lengthThree,
-  lengthFour,
-  lengthFive,
-  lengthSix,
-  lengthSeven,
-  lengthEight,
-  children,
-}) => {
+const ProductItem = ({ product }) => {
+  const { imgSrc, name, price } = product;
   return (
-    <div className="w-1/3 lg:w-1/5 flex flex-col justify-center items-center">
-      <img
-        className="rounded lg:h-60"
-        src="https://preview.redd.it/ih6no69aj90y.png?auto=webp&s=8e4f9101f58e0812f3625a51ec65c9b7c050da75"
-      />
-      <p className="text-center mt-5">{children}</p>
+    <div className="relative w-1/3 lg:w-1/5 flex flex-col hover:scale-105 duration-300">
+      <img className="rounded object-cover h-60 w-full" src={imgSrc} />
+      <div className="absolute w-full h-full hover:opacity-0 duration-300">
+        <div className="absolute bottom-0 bg-green-600 w-full text-white font-semibold">
+          <p className="text-center p-3 pb-0 truncate">{name}</p>
+          <p className="text-center p-3 pt-1.5">{price}</p>
+        </div>
+      </div>
     </div>
   );
 };

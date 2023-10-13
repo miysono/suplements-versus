@@ -1,23 +1,27 @@
 import AccordionBody from "../../components/AccordionBody";
 import AccordionItem from "../../components/AccordionItem";
-import Button from "../../components/Button";
 import SectionBody from "../../components/SectionBody";
+import Button from "../../components/Button";
+
 import Footer from "../../layout/Footer";
 import Navbar from "../../layout/Navbar";
 import PageBody from "../../layout/PageBody";
+
 import HomepageIntro from "./components/HomepageIntro";
 import InfoSection from "./components/InfoSection";
 import ProductItem from "./components/ProductItem";
 import ProductList from "./components/ProductList";
 import SectionTitle from "./components/SectionTitle";
+import ReviewItem from "./components/ReviewItem";
+import ReviewList from "./components/ReviewList";
 
-import { allReviews } from "../../assets/data";
+import { allReviews, allProducts } from "../../assets/data";
 import { Link } from "react-router-dom";
 
 const Homepage = () => {
   return (
     <>
-      {/* NAVBAR */}
+      {/* NAVBAR COMPONENT*/}
       <Navbar />
       {/* MAIN */}
       <PageBody>
@@ -57,20 +61,19 @@ const Homepage = () => {
         {/* TOP PRODUCTS */}
         <SectionBody marginXl paddingMd bgPrimary>
           <SectionTitle center>Top products</SectionTitle>
-
+          {/* ADD 8 PRODUCT ITEMS TO THE LIST */}
           <ProductList>
             {Array.from({ length: 8 }, (_, i) => (
-              <ProductItem key={_}>Product Name</ProductItem>
+              <ProductItem key={_} product={allProducts[i]}></ProductItem>
             ))}
           </ProductList>
-
           <div className="mx-8 flex justify-center lg:text-xl mt-5">
             <Button
               color="primary"
               outlined={true}
               aditionalStyling="w-full lg:w-96"
             >
-              Call to action
+              All recomended products
             </Button>
           </div>
         </SectionBody>
@@ -96,33 +99,11 @@ const Homepage = () => {
           <SectionTitle center colorSecondary>
             Check out our reviews!
           </SectionTitle>
-          <div className="mt-10 mx-8 flex gap-10 flex-wrap items-center justify-center lg:mx-28">
+          <ReviewList>
             {Array.from({ length: 3 }, (_, i) => (
-              <Link key={i} to={`/reviews/${allReviews[i].id}`}>
-                <div className="relative z-0 w-full flex justify-center items-center lg:w-96  hover:scale-105 duration-200 shadow-teal-900 drop-shadow-xl">
-                  <img
-                    className="rounded lg:h-96 w-full object-cover"
-                    src={allReviews[i].imgSrc}
-                  />
-                  <div className="h-full w-full absolute left-0 hover:opacity-0 duration-300 text-gray-200">
-                    <div className="absolute flex flex-col justify-between shadow-teal-900 left-0 w-40 py-5 h-full px-4 text-lg font-semibold bg-teal-700 border-r-4 border-r-white">
-                      <p>{allReviews[i].title}</p>
-
-                      <p className="text-base font-normal">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit.
-                      </p>
-
-                      <div className="text-base">
-                        <p>{allReviews[i].category}</p>
-                        <p>{allReviews[i].dateCreated}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Link>
+              <ReviewItem key={allReviews[i]} review={allReviews[i]} />
             ))}
-          </div>
+          </ReviewList>
           <div className="mx-8 mt-10 lg:text-xl flex justify-center lg:mx-28">
             <Link to="/reviews">
               <Button
@@ -156,6 +137,7 @@ const Homepage = () => {
             <SectionTitle colorSecondary center>
               Frequently Asked Questions
             </SectionTitle>
+            {/* FAQ ACCORDION */}
             <AccordionBody>
               <AccordionItem
                 first

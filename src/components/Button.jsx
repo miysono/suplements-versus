@@ -4,9 +4,11 @@ export default function Button({
   children,
   aditionalStyling = "",
   outlined = false,
+  onClick,
 }) {
   return (
     <button
+      onClick={onClick}
       type={type}
       className={`py-3 mt-5 duration-300 px-4 font-semibold rounded hover:scale-105 ${aditionalStyling} ${
         color === "primary" &&

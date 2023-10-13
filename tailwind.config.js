@@ -22,6 +22,12 @@ export default {
     "./src/pages/homepage/components/ProductList.jsx",
     "./src/pages/homepage/components/SectionTitle.jsx",
     "./src/pages/homepage/components/InfoSection.jsx",
+    "./src/pages/homepage/components/ReviewItem.jsx",
+    "./src/pages/homepage/components/ReviewList.jsx",
+
+    "./src/pages/reviews/components/PopularReviewItem.jsx",
+    "./src/pages/reviews/components/ReviewItem.jsx",
+    "./src/pages/reviews/components/ReviewList.jsx",
 
     "./src/layout/Footer.jsx",
     "./src/layout/Navbar.jsx",
@@ -32,6 +38,10 @@ export default {
     "./src/components/AccordionBody.jsx",
     "./src/components/AccordionItem.jsx",
     "./src/components/SectionBody.jsx",
+    "./src/components/ArticleContentsSection.jsx",
+
+    "./src/pages/admin-dashboard/AdminDashboard.jsx",
+    "./src/pages/admin-dashboard/components/NewReview.jsx",
   ],
   theme: {
     extend: {},
